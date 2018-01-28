@@ -1,4 +1,4 @@
-package com.avenuecode.orders.domain;
+package com.cloud.orders.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -35,4 +35,29 @@ public class Product implements Serializable {
     @Column(nullable = false)
     private BigDecimal price;
 
+    public Product() {
+    }
+
+    public Product(String upc, String sku, String description, BigDecimal price) {
+        this.upc = upc;
+        this.sku = sku;
+        this.description = description;
+        this.price = price;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getUpc() {
+        return upc;
+    }
+
+    public void setUpc(String upc) {
+        this.upc = upc;
+    }
 }

@@ -1,7 +1,7 @@
-package com.avenuecode.orders.service;
+package com.cloud.orders.service;
 
-import com.avenuecode.orders.domain.Product;
-import com.avenuecode.orders.repository.ProductRepository;
+import com.cloud.orders.domain.Product;
+import com.cloud.orders.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
-package com.avenuecode.orders.resource;
+package com.cloud.orders.resource;
 
-import com.avenuecode.orders.domain.Order;
-import com.avenuecode.orders.service.OrderService;
+import com.cloud.orders.domain.Product;
+import com.cloud.orders.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,24 +15,24 @@ import static org.springframework.http.ResponseEntity.notFound;
 import static org.springframework.http.ResponseEntity.ok;
 
 @RestController
-@RequestMapping("/orders")
-public class OrderResource {
+@RequestMapping("/products")
+public class ProductResource {
 
     @Autowired
-    private OrderService orderService;
+    private ProductService productService;
 
     @GetMapping
-    public ResponseEntity<List<Order>> listOrders() {
-        return ok(orderService.listOrders());
+    public ResponseEntity<List<Product>> listProducts() {
+        return ok(productService.listProducts());
     }
 
-    @GetMapping(value = "/{orderId}")
-    public ResponseEntity<Order> getOrder(@PathVariable String orderId) {
-        Order order = orderService.getOrder(orderId);
-        if (order == null) {
+    @GetMapping(value = "/{productId}")
+    public ResponseEntity<Product> getProduct(@PathVariable String productId) {
+        Product product = productService.getProduct(productId);
+        if (product == null) {
             return notFound().build();
         }
-        return ok(order);
+        return ok(product);
     }
 
 }

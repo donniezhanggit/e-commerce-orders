@@ -1,4 +1,4 @@
-package com.avenuecode.orders.domain;
+package com.cloud.orders.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -63,6 +63,19 @@ public class Order implements Serializable {
     )
     private List<Product> products = new ArrayList<>();
 
+    public Order() {
+    }
+
+    public Order(String orderNumber, BigDecimal discount, BigDecimal taxPercent, BigDecimal total, BigDecimal totalTax, BigDecimal grandTotal, String status) {
+        this.orderNumber = orderNumber;
+        this.discount = discount;
+        this.taxPercent = taxPercent;
+        this.total = total;
+        this.totalTax = totalTax;
+        this.grandTotal = grandTotal;
+        this.status = status;
+    }
+
     public BigDecimal getTotal() {
         BigDecimal total = new BigDecimal(ZERO);
         for (Product product : products) {
@@ -87,4 +100,15 @@ public class Order implements Serializable {
         return value.setScale(PRECISION, ROUND_FLOOR);
     }
 
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }
