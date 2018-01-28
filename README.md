@@ -25,6 +25,7 @@ API Endpoints
 5) Fetch Product Details:
    **[GET]** `http://localhost:8088/products/{product_id}`
 
+
 Tech Stack
 ==========
  * Java 8.x
@@ -39,23 +40,20 @@ Tech Stack
  * Spring Integration Tests
  
  
-Running Tests
-=============
-
- ** Running the application
-
+Running Application
+===================
 2 ways to run and test the application viz.
 
-   1) Running 'LaunchApplication' class as a Spring boot configuration with profile set as 'non-prod' (for reference, 'LaunchApplication.png' image has been added)
-        and then test using Postman scripts (scripts have been uploaded to repo)
+1) Running 'LaunchApplication' class as a Spring boot configuration with profile set as 'non-prod' (for reference, 'LaunchApplication.png' image has been added) and then test using Postman scripts (scripts have been uploaded to repo)
 
-   2) Running locally using maven and test by running Postman scripts (Orders.postman_collection.json has been added)
+2) Running locally using maven and test by running Postman scripts (Orders.postman_collection.json has been added)
 
                Build : mvn clean install -Dspring.profiles.active=non-prod
                Run locally: mvn spring-boot:run -Drun.profiles=non-prod
 
 
-
+Running Unit/Integration Tests
+==============================
 ** Running all tests
    1) Right-click on the src/test folder and run all tests
 
