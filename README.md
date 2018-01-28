@@ -1,6 +1,6 @@
 Summary
 =======
-Existing micro Service to fetch order and product information enhanced to add a generic `Search REST API` to display a list of potential matches based on the following criteria :
+Existing micro Service to fetch order and product information enhanced to add a generic `Search REST API` to display a list of potential matches (utilizing JPA Sepcifications) based on the following parameters :
 
 1) Filter all the orders based on shipment status
 2) Filter all the orders based on discount status
